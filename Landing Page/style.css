@@ -1,0 +1,131 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* color palette variables */
+:root {
+    --color-text: #333;
+    --color-bg: #f4f4f4;
+    --color-primary: #007bff;
+    --color-primary-dark: #0056b3;
+    --color-secondary: #28a745;
+    --color-secondary-dark: #1e7e34;
+    --color-footer: #333;
+    --color-white: #fff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header / Hero section */
+.hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: var(--color-white);
+    padding: 120px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    color: rgb(10, 1, 0); /* Bright black for the main headline */
+}
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: rgb(10, 1, 0); /* Bright black for the subheadline */
+}
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn.primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+.btn.primary:hover {
+    background: var(--color-primary-dark);
+}
+.btn.secondary {
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+.btn.secondary:hover {
+    background: var(--color-secondary-dark);
+}
+
+/* Features section */
+.features h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+.feature-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.feature-item {
+    flex: 1 1 30%;
+    background: #fefefe;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.feature-item h3 {
+    margin-bottom: 0.5em;
+}
+
+/* Call to action */
+.cta {
+    text-align: center;
+    background: #fffffe;
+    padding: 60px 20px;
+    margin: 40px 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+    background: var(--color-footer);
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .feature-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-item {
+        flex: 1 1 80%;
+    }
+    .hero h1 {
+        font-size: 2.2em;
+    }
+}
