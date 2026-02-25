@@ -1,0 +1,81 @@
+/* reset some default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* overall page settings */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* container to center content and control width */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* headings */
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: #222;
+}
+h2 {
+    font-size: 1.8em;
+    margin-top: 1.5em;
+    color: #444;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.3em;
+}
+h3, h4 {
+    font-size: 1.4em;
+    margin-top: 1.2em;
+    color: #555;
+}
+
+/* paragraphs */
+p {
+    margin: 0.8em 0;
+}
+
+/* lists */
+ul {
+    list-style: disc inside;
+    margin: 0.8em 0;
+}
+
+/* links */
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* contact info formatting */
+.contact-info {
+    margin: 0.5em 0;
+}
+
+/* responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}
+
