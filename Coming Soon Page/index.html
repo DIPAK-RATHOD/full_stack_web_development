@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Our Product is Coming Soon!</h1>
+        <p id="message">Stay tuned for the big launch.</p>
+        <div id="countdown">
+            <div><span id="days"></span><small>Days</small></div>
+            <div><span id="hours"></span><small>Hours</small></div>
+            <div><span id="minutes"></span><small>Minutes</small></div>
+            <div><span id="seconds"></span><small>Seconds</small></div>
+        </div>
+    </div>
+<script>
+        // Set the date we're counting down to
+        const launchDate = new Date("Dec 31, 2026 00:00:00").getTime();
+
+        // Update the count down every 1 second
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("message").innerText = "We have launched!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }, 1000);
+    </script>
+    
+</body>
+</html>
