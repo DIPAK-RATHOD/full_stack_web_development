@@ -1,0 +1,111 @@
+﻿/* 404 Error Page Styles */
+body {
+  background: #111;
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  text-align: center;
+  position: relative;
+}
+.message h1 {
+  font-size: 10rem;
+  margin: 0;
+  animation: pulse 1.5s infinite;
+}
+.message p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+.home-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff5c5c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.home-btn:hover {
+  background: #ff3030;
+}
+/* robot animation */
+.animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+.robot {
+  position: relative;
+  width: 60px;
+  height: 100px;
+  margin: auto;
+  animation: float 3s ease-in-out infinite;
+}
+.robot .head {
+  width: 60px;
+  height: 40px;
+  background: #444;
+  border-radius: 10px 10px 0 0;
+}
+.robot .body {
+  width: 60px;
+  height: 60px;
+  background: #666;
+  border-radius: 0 0 10px 10px;
+}
+.robot .arm, .robot .leg {
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  background: #666;
+  border-radius: 5px;
+}
+.robot .arm.left { left: -10px; top: 30px; animation: swing 1s infinite alternate; }
+.robot .arm.right { right: -10px; top: 30px; animation: swing 1s infinite alternate-reverse; }
+.robot .leg.left { left: 5px; top: 100px; animation: kick 1s infinite alternate; }
+.robot .leg.right { right: 5px; top: 100px; animation: kick 1s infinite alternate-reverse; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-20px); }
+}
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(30deg); }
+}
+@keyframes kick {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); }
+}
+
+/* background stars */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="10" cy="20" r="1" fill="white"/><circle cx="80" cy="10" r="1" fill="white"/><circle cx="50" cy="80" r="1" fill="white"/></svg>');
+  background-size: 200px 200px;
+  animation: moveStars 10s linear infinite;
+  z-index: -1;
+}
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
