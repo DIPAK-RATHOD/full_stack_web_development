@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Color Palette Generator</h1>
+    <div id="palette" class="palette"></div>
+    <button id="generate">Generate Palette</button>
+
+    <script>
+        // returns a random hex color value
+        function randomHex() {
+            return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0');
+        }
+
+        function generatePalette() {
+            const palette = document.getElementById('palette');
+            palette.innerHTML = ''; // clear existing
+            for (let i = 0; i < 5; i++) {
+                const hex = randomHex();
+                const box = document.createElement('div');
+                box.className = 'color-box';
+                box.style.backgroundColor = hex;
+                box.textContent = hex;
+
+                // click to copy
+                box.addEventListener('click', () => {
+                    navigator.clipboard.writeText(hex)
+                        .then(() => alert(hex + ' copied to clipboard'))
+                        .catch(() => {});
+                });
+
+                palette.appendChild(box);
+            }
+        }
+
+        document.getElementById('generate').addEventListener('click', generatePalette);
+        window.addEventListener('load', generatePalette);
+    </script>
+</body>
+</html>

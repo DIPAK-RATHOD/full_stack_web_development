@@ -1,0 +1,48 @@
+/* Simple styles for the palette generator */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+.palette {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.color-box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#generate {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+#generate:hover {
+    background-color: #555;
+}
