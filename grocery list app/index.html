@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Grocery List — Categories</title>
+	<link rel="stylesheet" href="style.css" />
+	<meta name="color-scheme" content="light dark">
+</head>
+<body>
+	<main class="app">
+		<header class="app-header">
+			<h1>Grocery List</h1>
+			<p class="subtitle">Organize items by category — check when done.</p>
+		</header>
+
+		<section class="panel panels">
+			<aside class="panel panel-left">
+				<form id="category-form" class="form-inline" aria-label="Add category">
+					<input id="new-category" placeholder="Add category (eg. Produce)" autocomplete="off" />
+					<button type="submit">Add</button>
+				</form>
+
+				<ul id="categories" class="list"></ul>
+			</aside>
+
+			<section class="panel panel-right">
+				<form id="item-form" class="form-inline" aria-label="Add item">
+					<select id="category-select" aria-label="Choose category"></select>
+					<input id="new-item" placeholder="Add item (eg. Apples)" autocomplete="off" />
+					<button type="submit">Add</button>
+				</form>
+
+				<div class="controls">
+					<button id="clear-completed">Clear completed</button>
+				</div>
+
+				<div id="items" class="items"></div>
+			</section>
+		</section>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
+
+
