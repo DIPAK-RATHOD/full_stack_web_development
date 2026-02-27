@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Quote Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Inspirational Quote</h1>
+    <p id="quote"></p>
+    <p id="author"></p>
+  </div>
+  <script>
+    // List of inspirational quotes
+    const quotes = [
+      { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+      { text: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
+      { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+      { text: "The journey of a thousand miles begins with one step.", author: "Lao Tzu" },
+      { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+      { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+      { text: "Whether you think you can or you think you can’t, you’re right.", author: "Henry Ford" },
+      { text: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" }
+    ];
+
+    function newQuote() {
+      const index = Math.floor(Math.random() * quotes.length);
+      const quote = quotes[index];
+      document.getElementById('quote').textContent = `"${quote.text}"`;
+      document.getElementById('author').textContent = `– ${quote.author}`;
+    }
+
+    // Show a quote on initial load
+    window.addEventListener('DOMContentLoaded', newQuote);
+  </script>
+</body>
+</html>
