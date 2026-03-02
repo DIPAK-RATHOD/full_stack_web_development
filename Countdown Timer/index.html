@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Countdown Timer</h1>
+
+    <label for="event">Event name</label>
+    <input id="event" type="text" placeholder="My Event (optional)" />
+
+    <label for="target">Target date & time</label>
+    <input id="target" type="datetime-local" />
+
+    <div class="controls">
+      <button id="start">Start</button>
+      <button id="stop" disabled>Stop</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <div id="display" class="display" aria-live="polite">No countdown set</div>
+    <div id="message" class="message" aria-live="polite"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
