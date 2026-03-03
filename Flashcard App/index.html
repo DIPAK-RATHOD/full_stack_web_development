@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flashcard App</title>
+    <link rel="stylesheet" href="style.css">   
+</head>
+<body> 
+    <div class="app">
+        <div class="flashcard-container">
+            <div class="flashcard">
+                <div class="front"><h2 id="question">Question here</h2></div>
+                <div class="back"><p id="answer">Answer here</p></div>
+            </div>
+        </div>
+    
+        <div class="controls">
+            <p id="counter"></p>
+            <button id="prev">Previous</button>
+            <button id="flip">Flip</button>
+            <button id="next">Next</button>
+        </div>
+
+        <div class="add-card-form">
+            <input id="new-question" placeholder="Enter question" />
+            <input id="new-answer" placeholder="Enter answer" />
+            <button id="add-btn">Add Card</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
